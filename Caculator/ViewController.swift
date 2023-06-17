@@ -36,47 +36,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var eightButton: UIButton!
     @IBOutlet weak var nineButton: UIButton!
     
+    @IBOutlet var buttonsArray: [UIButton]!
     override func viewDidLoad() {
         super.viewDidLoad()
-        cleanButton.layer.cornerRadius = 0.5 * cleanButton.bounds.size.width
-        operationButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        deleteButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        divideButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        multiplyButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        minusButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        plusButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        resultButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        fraktionButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        zeroButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        oneButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        twoButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        threeButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        fourButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        fiveButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        sixButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        sevenButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        eightButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        nineButton.layer.cornerRadius =  0.5 * cleanButton.bounds.size.width
-        
-        cleanButton.clipsToBounds = true
-        operationButton.clipsToBounds =  true
-        deleteButton.clipsToBounds =  true
-        divideButton.clipsToBounds =  true
-        multiplyButton.clipsToBounds =  true
-        minusButton.clipsToBounds =  true
-        plusButton.clipsToBounds =  true
-        resultButton.clipsToBounds =  true
-        fraktionButton.clipsToBounds =  true
-        zeroButton.clipsToBounds =  true
-        oneButton.clipsToBounds =  true
-        twoButton.clipsToBounds =  true
-        threeButton.clipsToBounds =  true
-        fourButton.clipsToBounds =  true
-        fiveButton.clipsToBounds =  true
-        sixButton.clipsToBounds =  true
-        sevenButton.clipsToBounds =  true
-        eightButton.clipsToBounds =  true
-        nineButton.clipsToBounds =  true
+        loadCalculatorButtons(arrayOfButtons: buttonsArray)
     }
 
     @IBAction func oneButtonAction(_ sender: Any) {
@@ -192,5 +155,11 @@ class ViewController: UIViewController {
         }
     }
     
+    func loadCalculatorButtons (arrayOfButtons : [UIButton]) {
+        for element in arrayOfButtons{
+            element.layer.cornerRadius =  0.5 * arrayOfButtons[0].bounds.size.width
+            element.clipsToBounds = true
+        }
+    }
 }
 
