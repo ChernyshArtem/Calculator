@@ -124,7 +124,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func makeFraktionButtonAction(_ sender: Any) {
-        calculateLabel.text!="\(calculateLabel.text!)."
+        if calculateLabel.text!.hasSuffix(".") == false {
+            calculateLabel.text!="\(calculateLabel.text!)."
+        }
     }
     
     @IBAction func deleteLastDigitButtonAction(_ sender: Any) {
